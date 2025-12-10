@@ -17,8 +17,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    // 使用 createWebHistory 讓 URL 看起來乾淨 (e.g., /games 而不是 /#/games)
-    history: createWebHistory(),
+    history: createWebHistory('/ITingFeng-Portfolio/'),
     routes,
     // 確保每次導航到新頁面時都滾動到頁面頂部
     scrollBehavior() {
