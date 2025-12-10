@@ -158,7 +158,7 @@ const handleOpenContact = () => {
 
 .lan.active {
   color: white;
-  background-color: #3b82f6;
+  background-color: #2842d4;
   font-weight: bold;
 }
 
