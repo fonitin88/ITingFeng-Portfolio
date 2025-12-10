@@ -69,15 +69,15 @@ export default {
                 },
                 gd: {
                     name: "晴空物語",
-                    role: "關卡美術 / 3D場景物件 <br>材質製作 / 特效",
+                    role: "關卡美術 / 3D場景物件 /材質製作 / 特效",
                 },
                 laplace: {
                     name: "拉普拉斯的神子",
-                    role: "關卡美術 / 3D場景物件 <br>材質製作 / 特效 / 道具動畫",
+                    role: "關卡美術 / 3D場景物件 /材質製作 / 特效",
                 },
                 aurakingdom: {
                     name: "幻想神域手機板",
-                    role: "關卡美術 / 3D場景物件 <br>材質製作 / 特效",
+                    role: "關卡美術 / 3D場景物件 /材質製作 / 特效",
                 },
             },
         },
@@ -90,7 +90,7 @@ export default {
             projects: {
                 ebet: {
                     name: "eBET",
-                    role: "UI、Banner、電子報、影片製作 <br>2D & 3D 遊戲物件 / 特效",
+                    role: "UI/Banner/電子報/影片製作 /2D & 3D 遊戲物件 / 特效",
                 },
             },
         },

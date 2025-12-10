@@ -30,17 +30,17 @@
 
               <div class="projects-list">
                 <div v-for="(project, pIndex) in company.projects" :key="pIndex" class="project-item">
-                  <img :src="project.logo" :alt="$t('experience.' + company.id + '.projects.' + project.id + '.name')"
-                    class="project-logo" />
+
                   <div class="project-info">
+                    <img :src="project.logo" :alt="$t('experience.' + company.id + '.projects.' + project.id + '.name')"
+                      class="project-logo" />
                     <div class="project-name">
                       {{ $t('experience.' + company.id + '.projects.' + project.id + '.name') }}
                     </div>
-                    <div class="project-role">
-                      <span class="diamond">◆</span>
-                      <!-- role 有 <br>，所以用 v-html -->
-                      <span v-html="$t('experience.' + company.id + '.projects.' + project.id + '.role')"></span>
-                    </div>
+                  </div>
+                  <div class="project-role">
+                    <span class="diamond">◆</span>
+                    <span v-html="$t('experience.' + company.id + '.projects.' + project.id + '.role')"></span>
                   </div>
                 </div>
               </div>
@@ -248,15 +248,13 @@ const companies = ref([
   font-size: 12px;
 }
 
-/* Projects List */
+
 .projects-list {
   flex: 1;
 }
 
 .project-item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  display: block;
   margin-bottom: 25px;
   padding: 15px;
   background: rgba(255, 255, 255, 0.03);
@@ -288,7 +286,7 @@ const companies = ref([
 }
 
 .project-name {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 6px;
   color: #fff;

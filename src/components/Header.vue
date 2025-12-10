@@ -2,7 +2,17 @@
   <div>
     <header class="header">
       <div class="header-container">
-        <span class="logo-text">{{ $t('header.name') }}</span>
+        <div class="header-top">
+          <span class="logo-text">{{ $t('header.name') }}</span>
+          <!-- 語言切換按鈕 -->
+          <div class="lang-up">
+            <div class="lang-switcher">
+              <button class="lan" :class="{ 'active': locale === 'en' }" @click="setLang('en')">EN</button>
+              <button class="lan" :class="{ 'active': locale === 'zh-TW' }" @click="setLang('zh-TW')">中</button>
+            </div>
+          </div>
+        </div>
+
 
         <nav class="nav">
           <router-link to="/" class="nav-button" active-class="active">
@@ -21,10 +31,12 @@
             {{ $t('header.art') }}
           </router-link>
           <Social class="social-links" @open-contact="handleOpenContact" />
-          <!-- 語言切換按鈕（示意） -->
-          <div class="lang-switcher">
-            <button class="lan" :class="{ 'active': locale === 'en' }" @click="setLang('en')">EN</button>
-            <button class="lan" :class="{ 'active': locale === 'zh-TW' }" @click="setLang('zh-TW')">中</button>
+          <!-- 語言切換按鈕 -->
+          <div class="lang-down">
+            <div class="lang-switcher">
+              <button class="lan" :class="{ 'active': locale === 'en' }" @click="setLang('en')">EN</button>
+              <button class="lan" :class="{ 'active': locale === 'zh-TW' }" @click="setLang('zh-TW')">中</button>
+            </div>
           </div>
         </nav>
 
@@ -70,6 +82,14 @@ const handleOpenContact = () => {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+}
+
+/* 上排：logo + 語言切換 */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+
 }
 
 .logo-text {
@@ -96,6 +116,8 @@ const handleOpenContact = () => {
   transition: color 0.3s;
 }
 
+
+
 .nav-button:hover,
 .nav-button.active {
   color: white;
@@ -106,6 +128,10 @@ const handleOpenContact = () => {
 }
 
 /* 語系 */
+.lang-up {
+  display: none;
+}
+
 .lan {
   text-decoration: none;
   font-size: 1rem;
@@ -138,7 +164,7 @@ const handleOpenContact = () => {
 
 /* ===== Responsive ===== */
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
   .header-container {
     display: block;
   }
@@ -148,6 +174,7 @@ const handleOpenContact = () => {
   }
 
   .lang-switcher {
+
     margin-left: auto;
   }
 
@@ -158,5 +185,14 @@ const handleOpenContact = () => {
   .social-links {
     display: none;
   }
+
+  .lang-up {
+    display: flex;
+  }
+
+  .lang-down {
+    display: none;
+  }
+
 }
 </style>

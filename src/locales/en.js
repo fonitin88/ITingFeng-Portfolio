@@ -71,15 +71,15 @@ export default {
                 },
                 gd: {
                     name: "Glory Destiny",
-                    role: "Level Art / Hand-painting 3D Props <br>Materials / VFX",
+                    role: "Level Art / Hand-painting 3D Props /Materials / VFX",
                 },
                 laplace: {
                     name: "LaPlace",
-                    role: "Level Art / Hand-painting 3D Props <br>Materials / VFX / Props Animation",
+                    role: "Level Art / Hand-painting 3D Props / Materials / VFX / Props Animation",
                 },
                 aurakingdom: {
                     name: "Aura Kingdom",
-                    role: "Level Art / Hand-painting 3D Props <br>Materials / VFX",
+                    role: "Level Art / Hand-painting 3D Props / Materials / VFX",
                 },
             },
         },
@@ -92,7 +92,7 @@ export default {
             projects: {
                 ebet: {
                     name: "eBET",
-                    role: "UI / Banner / Newsletter / Video Production <br>2D & 3D Game assets / VFX",
+                    role: "UI / Banner / Newsletter / Video Production / 2D & 3D Game assets / VFX",
                 },
             },
         },
@@ -105,7 +105,7 @@ export default {
             projects: {
                 themepark: {
                     name: "ThemePark Island",
-                    role: "Hand-painting 3D Props /<br> 3D Characters / Animation Setup",
+                    role: "Hand-painting 3D Props /3D Characters / Animation Setup",
                 },
             },
         },
