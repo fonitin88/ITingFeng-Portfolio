@@ -152,15 +152,10 @@ export default {
     },
     code: {
         heroBadge: 'Unity 小遊戲',
-        subtitle: '操作送貨車在時間內收集包裹，躲避或摧毀機器人。',
-        gameplayCards: [
-            '選擇顏色小貨車',
-            '在迷宮中收集包裹',
-            '小心機器人，被打到會扣血！',
-            '補充油箱能量，可以回復 HP',
-            '空白鍵開大燈秒殺機器人！',
-            '時間到顯示收集包裹數，HP 歸零則進入陣亡畫面。'
-        ],
+
+        gameplayCards1: '使用鍵盤的WASD來操作貨車，並在時間內收集包裹',
+        gameplayCards2: '躲避或使用空白鍵開大燈摧毀機器人。',
+
         toolsTitle: '客製化開發工具',
         toolsSubtitle: '用於快速建立遊戲關卡的 Unity Editor 工具',
         tool1: {

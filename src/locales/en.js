@@ -155,15 +155,9 @@ export default {
     },
     code: {
         heroBadge: 'Unity Game',
-        subtitle: 'Drive the delivery van to collect packages within the time limit while dodging or destroying robots.',
-        gameplayCards: [
-            'Choose your delivery van color',
-            'Collect packages inside the maze',
-            'Watch out for robots,getting hit costs HP!',
-            'Refill the gas tank to restore HP',
-            'Press Space to turn on high beams and one-shot robots!',
-            'When time is up, show total packages, if HP reaches zero, display the death screen.'
-        ],
+
+        gameplayCards1: 'Use WASD to drive the van and collect packages before time runs out.',
+        gameplayCards2: 'Avoid robots, or press Space to destroy them with high beams.',
         toolsTitle: 'Custom Tools',
         toolsSubtitle: 'Unity Editor tools used to quickly build and iterate on gameplay levels',
         tool1: {

@@ -17,14 +17,15 @@
 
       <!-- Gameplay Section -->
       <section class="gameplay-section">
-        <!-- <h2 class="gameplay-title">遊戲玩法</h2> -->
-        <p class="subtitle">
-          {{ $t('code.subtitle') }}
-        </p>
         <div class="gameplay-grid">
           <!-- $tm() 專門用來讀「非字串」（陣列 / 物件）」 -->
-          <div class="gameplay-card" v-for="(text, index) in $tm('code.gameplayCards')" :key="index">
-            <h3 class="card-title">{{ text }}</h3>
+          <div class="gameplay-card">
+            <img class="gameplayPic" src="../assets/WASD.png" alt="WASD">
+            <h3 class="card-title">{{ $t('code.gameplayCards1') }}</h3>
+          </div>
+          <div class="gameplay-card">
+            <img class="gameplayPic" src="../assets/Space.png" alt="Space">
+            <h3 class="card-title">{{ $t('code.gameplayCards2') }}</h3>
           </div>
         </div>
       </section>
@@ -201,12 +202,13 @@ window.addEventListener('load', resizeUnity);
   border: none;
 }
 
-
-
-
 /* Gameplay Section */
 .gameplay-section {
   margin-bottom: 4rem;
+}
+
+.gameplayPic {
+  width: 70px;
 }
 
 .gameplay-title {
@@ -221,6 +223,7 @@ window.addEventListener('load', resizeUnity);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.2rem;
+  margin-top: 20px;
 }
 
 .gameplay-card {
