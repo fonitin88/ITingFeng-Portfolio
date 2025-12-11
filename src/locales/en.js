@@ -152,5 +152,64 @@ export default {
             messagePlaceholder: "Write your message here...",
         },
         send: "Send",
+    },
+    code: {
+        heroBadge: 'Unity Game',
+        subtitle: 'A small action-collection game: drive the delivery van to collect packages within the time limit while dodging or destroying robots.',
+        gameplayCards: [
+            'Choose your delivery van color',
+            'Collect packages inside the maze',
+            'Watch out for robots – getting hit costs HP!',
+            'Refill the gas tank to restore HP',
+            'Press Space to turn on high beams and one-shot robots!',
+            'When time is up, show total packages; if HP reaches zero, display the death screen.'
+        ],
+        toolsTitle: 'Tools & Workflow',
+        toolsSubtitle: 'Unity Editor tools used to quickly build and iterate on gameplay levels',
+        tool1: {
+            title: 'UI Events & Interaction System',
+            description: 'Let players choose the van color before the game starts and instantly apply it to the player model.',
+            features: [
+                'Use Unity UI Button events to build the click flow for switching colors',
+                'Use Renderer and Material APIs to get material instances, then control shader parameters via SetColor at runtime',
+                'Store and load the selected color with PlayerPrefs to keep it across scenes',
+                'Leverage RequireComponent and GetComponent to auto-bind the Renderer and reduce missing-reference errors',
+                'Follow a data / view / controller–like separation (MVC-like) for better maintainability and readability'
+            ]
+        },
+        tool2: {
+            title: 'Maze Generator Tool',
+            description: 'Load modular wall pieces in the Editor and generate maze layouts with one click. Artists can still delete or tweak pieces after generation.',
+            features: [
+                'Build a custom EditorWindow as a dedicated maze generator panel',
+                'Use PrefabUtility.InstantiatePrefab to spawn wall prefabs in Editor mode',
+                'Generate maze structure with a DFS-based algorithm',
+                'Use Renderer.bounds to get the actual size of wall pieces and snap them to a tile grid',
+                'Read TerrainData.size and automatically convert it to maze Width / Height for smarter defaults',
+                'Use EditorUtility.DisplayDialog, DestroyImmediate, and SceneView.RepaintAll() to support one-click generate / clear'
+            ]
+        },
+        tool3: {
+            title: 'Maze Decoration Tool',
+            description: 'Detect maze wall edges and automatically place decorations like trees and rocks based on adjustable parameters.',
+            features: [
+                'Scan maze walls with GetComponentsInChildren&lt;>() and use existing markers to decide decoration spawn positions',
+                'Use Random.value and Random.Range to control density, offset from the wall, and scale range for controlled randomness',
+                'Use Renderer.bounds.size to get wall thickness and combine it with wall normals to offset decorations outward correctly',
+                'Use GameObject.Find to create a centralized “Decorations Root” object that holds all placed decorations',
+                'Use Object.Instantiate and DestroyImmediate to generate / clear decorations in Editor mode'
+            ]
+        },
+        tool4: {
+            title: 'NavMesh-Based Minimap Generator',
+            description: 'Automatically generates a walkable-area minimap PNG from NavMesh data, with custom colors ready to be used directly in UI.',
+            features: [
+                'Use NavMesh.CalculateTriangulation and NavMesh.SamplePosition to convert NavMesh into walkable / unwalkable areas',
+                'Use Mathf.Lerp to project the 3D world into 2D texture space',
+                'Use BFS to compute distance fields from walkable to obstacles (and vice versa) to control edge thickness',
+                'Support custom Walkable / Edge / Blocked colors and export the result as a PNG minimap texture',
+                'Use AssetDatabase and TextureImporter to fully automate exporting and importing the minimap texture'
+            ]
+        }
     }
 };

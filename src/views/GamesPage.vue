@@ -19,31 +19,12 @@
       <section class="gameplay-section">
         <!-- <h2 class="gameplay-title">遊戲玩法</h2> -->
         <p class="subtitle">
-          小型動作收集遊戲，操作送貨車在時間內收集包裹，躲避或摧毀機器人。
+          {{ $t('code.subtitle') }}
         </p>
         <div class="gameplay-grid">
-          <div class="gameplay-card">
-            <h3 class="card-title">選擇顏色小貨車</h3>
-          </div>
-
-          <div class="gameplay-card">
-            <h3 class="card-title">在迷宮中收集包裹</h3>
-          </div>
-
-          <div class="gameplay-card">
-            <h3 class="card-title">小心機器人，被打到會扣血!</h3>
-          </div>
-
-          <div class="gameplay-card">
-            <h3 class="card-title">補充油箱能量，可以回復 HP</h3>
-          </div>
-
-          <div class="gameplay-card ">
-            <h3 class="card-title">空白鍵 開大燈秒殺機器人！</h3>
-          </div>
-
-          <div class="gameplay-card">
-            <h3 class="card-title">時間到顯示收集包裹數，HP 歸零則進入陣亡畫面。</h3>
+          <!-- $tm() 專門用來讀「非字串」（陣列 / 物件）」 -->
+          <div class="gameplay-card" v-for="(text, index) in $tm('code.gameplayCards')" :key="index">
+            <h3 class="card-title">{{ text }}</h3>
           </div>
         </div>
       </section>
@@ -51,26 +32,22 @@
       <!-- Tool Cards -->
       <section class="tools-section">
         <div class="section-header">
-          <h2 class="section-title">開發工具</h2>
-          <p class="section-subtitle">用於快速建立遊戲關卡的 Unity Editor 工具</p>
+          <h2 class="section-title">{{ $t('code.toolsTitle') }}</h2>
+          <p class="section-subtitle">{{ $t('code.toolsSubtitle') }}</p>
         </div>
 
         <!-- Tool 1 -->
         <div class="tool-card">
           <div class="tool-content">
-            <h3 class="tool-title">🎨 UI 事件與互動系統</h3>
+            <h3 class="tool-title">🎨 {{ $t('code.tool1.title') }}</h3>
             <div class="tool-layout">
               <div class="tool-image-wrapper">
                 <img class="tool-image" :src="pics.tool_1" alt="Color Selection UI" />
               </div>
               <div class="tool-text">
-                <p class="tool-description">在遊戲開始前選擇車子顏色，並即時套用到玩家模型</p>
+                <p class="tool-description">{{ $t('code.tool1.description') }}</p>
                 <ul class="feature-list">
-                  <li>Unity UI Button 事件建立玩家點擊與顏色切換的互動流程</li>
-                  <li>Renderer 與 Material API 取得材質實例，並透過 SetColor 動態控制Shader參數</li>
-                  <li>PlayerPrefs 儲存並載入玩家選擇的顏色設定，實作跨場景儲存</li>
-                  <li>運用 RequireComponent 與 GetComponent 自動綁定 Renderer 減少錯誤</li>
-                  <li>採用資料 / 視圖 / 控制分離的結構（類 MVC），提升系統可維護性</li>
+                  <li v-for="(text, index) in $tm('code.tool1.features')" :key="index">{{ text }}</li>
                 </ul>
               </div>
             </div>
@@ -80,20 +57,15 @@
         <!-- Tool 2 -->
         <div class="tool-card">
           <div class="tool-content">
-            <h3 class="tool-title">🏗️ 迷宮生成工具</h3>
+            <h3 class="tool-title">🏗️ {{ $t('code.tool2.title') }}</h3>
             <div class="tool-layout">
               <div class="tool-image-wrapper">
                 <img class="tool-image" :src="pics.tool_2" alt="Maze Generator Editor" />
               </div>
               <div class="tool-text">
-                <p class="tool-description">在 Editor中載入模組化物件，一鍵生成迷宮關卡，生成後美術也可以刪除修改</p>
+                <p class="tool-description">{{ $t('code.tool2.description') }}</p>
                 <ul class="feature-list">
-                  <li>運用 EditorWindow 建立自訂編輯器工具</li>
-                  <li>以 PrefabUtility.InstantiatePrefab 在 Editor 中生成牆體物件</li>
-                  <li>使用 DFS 演算法生成迷宮結構</li>
-                  <li>透過 Renderer.bounds 取得實際尺寸，並進行 Tile Snap 排列</li>
-                  <li>讀取 TerrainData.size 自動轉換成迷宮 Width / Height，提高工具智慧化程度</li>
-                  <li>使用 EditorUtility.DisplayDialog、DestroyImmediate、SceneView.RepaintAll() 實作一鍵生成與清除功能</li>
+                  <li v-for="(text, index) in $tm('code.tool2.features')" :key="index">{{ text }}</li>
                 </ul>
               </div>
             </div>
@@ -103,19 +75,16 @@
         <!-- Tool 3 -->
         <div class="tool-card">
           <div class="tool-content">
-            <h3 class="tool-title">🌳 迷宮裝飾工具</h3>
+            <h3 class="tool-title">🌳 {{ $t('code.tool3.title') }}</h3>
             <div class="tool-layout">
               <div class="tool-image-wrapper">
                 <img class="tool-image" :src="pics.tool_3" alt="Maze Decoration Tool" />
               </div>
               <div class="tool-text">
-                <p class="tool-description">判斷迷宮牆邊，並載入裝飾物件，調整數值來自動生成</p>
+                <p class="tool-description">{{ $t('code.tool3.description') }}</p>
                 <ul class="feature-list">
-                  <li>透過 GetComponentsInChildren<>()掃描迷宮牆面，利用既有標記資料決定裝飾生成位置</li>
-                  <li>Random.value、Random.Range 控制 density、距離牆的 offset、縮放範圍，實作隨機但可控的程序化裝飾</li>
-                  <li>Renderer.bounds.size 計算牆體厚度，搭配牆的 normal 決定裝飾往外偏移的正確方向</li>
-                  <li>使用 GameObject.Find 建立集中管理的 Decorations Root，統一掛載所有裝飾物</li>
-                  <li>Object.Instantiate 與 DestroyImmediate 在 Editor 模式中生成 / 清除</li>
+                  <li v-for="(text, index) in $tm('code.tool3.features')" :key="index">{{ text }}</li>
+
                 </ul>
               </div>
             </div>
@@ -125,19 +94,16 @@
         <!-- Tool 4 -->
         <div class="tool-card">
           <div class="tool-content">
-            <h3 class="tool-title">🗺️ NavMesh 生成小地圖</h3>
+            <h3 class="tool-title">🗺️ {{ $t('code.tool4.title') }}</h3>
             <div class="tool-layout">
               <div class="tool-image-wrapper">
                 <img class="tool-image" :src="pics.tool_4" alt="NavMesh Minimap Generator" />
               </div>
               <div class="tool-text">
-                <p class="tool-description">從 NavMesh 自動生成可走區小地圖 PNG，可自訂區塊的顏色並直接用在 UI 上</p>
+                <p class="tool-description">{{ $t('code.tool4.description') }}</p>
                 <ul class="feature-list">
-                  <li>透過 NavMesh.CalculateTriangulation 與 NavMesh.SamplePosition，從 NavMesh 自動換算出可走 / 不可走區</li>
-                  <li>Mathf.Lerp 把 3D 場景壓縮成 2D 貼圖</li>
-                  <li>BFS 計算「可走區距離障礙物」與「障礙物距離可走區」的距離場，控制寬度</li>
-                  <li>可自訂 Walkable / Edge / Blocked 顏色，並輸出 PNG 小地圖貼圖</li>
-                  <li>使用 AssetDatabase 與 TextureImporter 自動化 Minimap 貼圖的輸出流程</li>
+                  <li v-for="(text, index) in $tm('code.tool4.features')" :key="index">{{ text }}</li>
+
                 </ul>
               </div>
             </div>
@@ -159,6 +125,22 @@ const pics = {
   tool_4: getIconPath('Minimap'),
 
 };
+
+function resizeUnity() {
+  //找到外層容器與縮放用的盒子
+  const wrapper = document.querySelector('.game-wrapper');
+  const box = document.querySelector('.unity-scale-box');
+  //取得容器的實際大小
+  const W = wrapper.clientWidth;
+  const H = wrapper.clientHeight;
+  //等比縮放
+  const scale = Math.min(W / 1280, H / 720);
+  //把結果存成 CSS 變數
+  box.style.setProperty('--unity-scale', scale);
+}
+//當頁面載入 / 視窗縮放時重新計算
+window.addEventListener('resize', resizeUnity);
+window.addEventListener('load', resizeUnity);
 
 </script>
 
@@ -206,6 +188,9 @@ const pics = {
 }
 
 .unity-scale-box {
+  /* 外殼去自動等比縮放 */
+  --unity-scale: 0.76;
+  transform: scale(var(--unity-scale));
   transform-origin: top left;
   position: absolute;
 }
@@ -216,10 +201,8 @@ const pics = {
   border: none;
 }
 
-/* 核心：自動等比縮放 */
-.game-wrapper .unity-scale-box {
-  transform: scale(var(--unity-scale));
-}
+
+
 
 /* Gameplay Section */
 .gameplay-section {
