@@ -155,16 +155,16 @@ export default {
     },
     code: {
         heroBadge: 'Unity Game',
-        subtitle: 'A small action-collection game: drive the delivery van to collect packages within the time limit while dodging or destroying robots.',
+        subtitle: 'Drive the delivery van to collect packages within the time limit while dodging or destroying robots.',
         gameplayCards: [
             'Choose your delivery van color',
             'Collect packages inside the maze',
-            'Watch out for robots – getting hit costs HP!',
+            'Watch out for robots,getting hit costs HP!',
             'Refill the gas tank to restore HP',
             'Press Space to turn on high beams and one-shot robots!',
-            'When time is up, show total packages; if HP reaches zero, display the death screen.'
+            'When time is up, show total packages, if HP reaches zero, display the death screen.'
         ],
-        toolsTitle: 'Tools & Workflow',
+        toolsTitle: 'Custom Tools',
         toolsSubtitle: 'Unity Editor tools used to quickly build and iterate on gameplay levels',
         tool1: {
             title: 'UI Events & Interaction System',
@@ -173,19 +173,19 @@ export default {
                 'Use Unity UI Button events to build the click flow for switching colors',
                 'Use Renderer and Material APIs to get material instances, then control shader parameters via SetColor at runtime',
                 'Store and load the selected color with PlayerPrefs to keep it across scenes',
-                'Leverage RequireComponent and GetComponent to auto-bind the Renderer and reduce missing-reference errors',
-                'Follow a data / view / controller–like separation (MVC-like) for better maintainability and readability'
+                'Use RequireComponent and GetComponent to auto-bind the Renderer and reduce missing-reference errors',
+                'Follow a data / view / controller,like separation (MVC-like) for better maintainability and readability'
             ]
         },
         tool2: {
             title: 'Maze Generator Tool',
-            description: 'Load modular wall pieces in the Editor and generate maze layouts with one click. Artists can still delete or tweak pieces after generation.',
+            description: 'Load modular pieces in the Editor and generate maze layouts with one click. Artists can still delete or tweak pieces after generation.',
             features: [
                 'Build a custom EditorWindow as a dedicated maze generator panel',
                 'Use PrefabUtility.InstantiatePrefab to spawn wall prefabs in Editor mode',
                 'Generate maze structure with a DFS-based algorithm',
                 'Use Renderer.bounds to get the actual size of wall pieces and snap them to a tile grid',
-                'Read TerrainData.size and automatically convert it to maze Width / Height for smarter defaults',
+                'Read TerrainData.size and automatically convert it to maze Width / Height ',
                 'Use EditorUtility.DisplayDialog, DestroyImmediate, and SceneView.RepaintAll() to support one-click generate / clear'
             ]
         },

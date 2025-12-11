@@ -161,7 +161,7 @@ export default {
             '空白鍵開大燈秒殺機器人！',
             '時間到顯示收集包裹數，HP 歸零則進入陣亡畫面。'
         ],
-        toolsTitle: '開發工具',
+        toolsTitle: '客製化開發工具',
         toolsSubtitle: '用於快速建立遊戲關卡的 Unity Editor 工具',
         tool1: {
             title: 'UI 事件與互動系統',
@@ -182,24 +182,24 @@ export default {
                 '以 PrefabUtility.InstantiatePrefab 在 Editor 模式中生成牆體物件',
                 '使用 DFS 演算法生成迷宮結構',
                 '透過 Renderer.bounds 取得實際尺寸，並進行 Tile Snap 排列',
-                '讀取 TerrainData.size 自動換算成迷宮 Width / Height，提高工具智慧化程度',
-                '使用 EditorUtility.DisplayDialog、DestroyImmediate、SceneView.RepaintAll() 實作一鍵生成與清除流程'
+                '讀取 TerrainData.size 自動換算成迷宮的 Width / Height',
+                '使用 EditorUtility.DisplayDialog、DestroyImmediate、SceneView.RepaintAll() 一鍵生成與清除流程'
             ]
         },
         tool3: {
             title: '迷宮裝飾工具',
-            description: '判斷迷宮牆邊並載入裝飾物件，透過調整數值自動生成樹木、石頭等環境裝飾。',
+            description: '判斷迷宮牆邊並載入裝飾物件，透過調整數值自動生成樹木、石頭等物件。',
             features: [
                 '透過 GetComponentsInChildren&lt;>() 掃描迷宮牆面，利用既有標記資料決定裝飾生成位置',
-                '使用 Random.value、Random.Range 控制 density、距離牆的 offset、縮放範圍，實作隨機但可控的程序化裝飾',
-                '使用 Renderer.bounds.size 計算牆體厚度，搭配牆的 normal 決定裝飾往外偏移的正確方向',
+                '使用 Random.value、Random.Range 控制密度、牆的距離、縮放範圍，隨機但可控的生成物件',
+                '使用 Renderer.bounds.size 計算牆體厚度，搭配牆的法向，去判斷朝外方向來生成物件',
                 '使用 GameObject.Find 建立集中管理的 Decorations Root，統一掛載所有裝飾物件',
                 '運用 Object.Instantiate 與 DestroyImmediate 在 Editor 模式中生成與清除裝飾'
             ]
         },
         tool4: {
             title: 'NavMesh 生成小地圖',
-            description: '從 NavMesh 自動生成可走區小地圖 PNG，可自訂區塊顏色並直接用在 UI 上。',
+            description: '從 NavMesh 自動生成遊戲小地圖 PNG，可自訂區塊顏色並直接用在 UI 上。',
             features: [
                 '透過 NavMesh.CalculateTriangulation 與 NavMesh.SamplePosition，從 NavMesh 自動換算出可走 / 不可走區域',
                 '使用 Mathf.Lerp 將 3D 場景壓縮映射成 2D 貼圖座標',
