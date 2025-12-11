@@ -57,61 +57,47 @@
 <script setup>
 import { ref } from "vue";
 
-// 公司 ICON
-import xLegendIcon from '../assets/ICON/X-legend.png';
-import Toppath from '../assets/ICON/Toppath.png';
-import Finifugu from '../assets/ICON/Finifugu.png';
-import Neobards from '../assets/ICON/Neobards_logo.png';
-import Ringtail from '../assets/ICON/Ringtail.png';
+const getIconPath = (filename) => {
+  return new URL(`../assets/ICON/${filename}.png`, import.meta.url).href;
+};
 
-// 遊戲 ICON
-import Dragon from '../assets/ICON/Dragon.png';
-import GD from '../assets/ICON/GD_art_1.png';
-import laplace from '../assets/ICON/laplace.png';
-import aurakingdom from '../assets/ICON/aurakingdom.png';
-import eBET from '../assets/ICON/eBET.png';
-import ThemePark from '../assets/ICON/ThemePark.png';
-import Dwm from '../assets/ICON/Dwm.png';
-import Scape from '../assets/ICON/Scape.png';
-
-// 🔹 只放「id + 圖片」，文字改交給 i18n 管
 const companies = ref([
   {
     id: "xlegend",
-    icon: xLegendIcon,
+    icon: getIconPath('X-legend'),
     projects: [
-      { id: "dragon", logo: Dragon },
-      { id: "gd", logo: GD },
-      { id: "laplace", logo: laplace },
-      { id: "aurakingdom", logo: aurakingdom },
+      { id: "dragon", logo: getIconPath('Dragon') },
+      { id: "gd", logo: getIconPath('GD_art_1') },
+      { id: "laplace", logo: getIconPath('laplace') },
+      { id: "aurakingdom", logo: getIconPath('aurakingdom') },
     ],
   },
   {
     id: "toppath",
-    icon: Toppath,
+    icon: getIconPath('Toppath'),
     projects: [
-      { id: "ebet", logo: eBET },
+      { id: "ebet", logo: getIconPath('eBET') },
     ],
   },
   {
     id: "finifugu",
-    icon: Finifugu,
+    icon: getIconPath('Finifugu'),
     projects: [
-      { id: "themepark", logo: ThemePark },
+      { id: "themepark", logo: getIconPath('ThemePark') },
     ],
   },
   {
     id: "neobards",
-    icon: Neobards,
+    icon: getIconPath('Neobards_logo'),
     projects: [
-      { id: "dwm", logo: Dwm },
+      { id: "dwm", logo: getIconPath('Dwm') },
     ],
   },
   {
     id: "ringtail",
-    icon: Ringtail,
+    icon: getIconPath('Ringtail'),
     projects: [
-      { id: "scape", logo: Scape },
+      { id: "scape", logo: getIconPath('Scape') },
     ],
   },
 ]);
