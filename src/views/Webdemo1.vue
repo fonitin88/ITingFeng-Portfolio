@@ -9,7 +9,7 @@
                 <div class="hero-badge">ASP.NET</div>
                 <div class="hero-badge">PostgreSQL</div>
                 <div class="hero-badge">MVC</div>
-                <div class="hero-badge">EF Core</div>
+                <div class="hero-badge">HTML5</div>
             </section>
 
             <!-- Demo Preview with Button -->

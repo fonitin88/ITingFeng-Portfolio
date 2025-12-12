@@ -29,7 +29,7 @@ export default {
         skills: {
             col1: [
                 "Full-Stack",
-                "Shader Graph / HLSL",
+                "Shader Graph ",
                 "Gameplay scripting",
                 "Custom Procedural tools",
                 "C#, JavaScript, VUE, HTML5, CSS",

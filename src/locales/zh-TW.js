@@ -26,7 +26,7 @@ export default {
         skills: {
             col1: [
                 "全端開發",
-                "Shader Graph / HLSL",
+                "Shader Graph ",
                 "遊戲玩法程式",
                 "客製程序化工具",
                 "C#, JavaScript, VUE, HTML5, CSS",
