@@ -4,16 +4,17 @@ import { createRouter, createWebHistory } from 'vue-router';
 import AboutPage from '../views/AboutPage.vue';
 import Experience from '../views/Experience.vue';
 import GamesPage from '../views/GamesPage.vue';
+import Webdemo1 from '../views/Webdemo1.vue';
 import ArtPage from '../views/ArtPage.vue';
+
 const routes = [
     // 設置首頁/預設頁面
     { path: '/', name: 'About', component: AboutPage },
-    // 設置 Experience 頁面
     { path: '/experience', name: 'experience', component: Experience },
-    // 設置 Games 頁面
-    { path: '/games', name: 'Games', component: GamesPage },
-    // 設置 Art 頁面
-    { path: '/art', name: 'Art', component: ArtPage }
+    { path: '/code/game1', name: 'Games', component: GamesPage },
+    { path: '/code/webdemo1', name: 'Web', component: Webdemo1 },
+    { path: '/art', name: 'Art', component: ArtPage },
+
 ];
 
 const router = createRouter({

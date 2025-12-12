@@ -167,8 +167,7 @@ export default {
                 'Use Unity UI Button events to build the click flow for switching colors',
                 'Use Renderer and Material APIs to get material instances, then control shader parameters via SetColor at runtime',
                 'Store and load the selected color with PlayerPrefs to keep it across scenes',
-                'Use RequireComponent and GetComponent to auto-bind the Renderer and reduce missing-reference errors',
-                'Follow a data / view / controller,like separation (MVC-like) for better maintainability and readability'
+                'Follow a data / view / controller,like separation for better maintainability and readability'
             ]
         },
         tool2: {
@@ -179,19 +178,17 @@ export default {
                 'Use PrefabUtility.InstantiatePrefab to spawn wall prefabs in Editor mode',
                 'Generate maze structure with a DFS-based algorithm',
                 'Use Renderer.bounds to get the actual size of wall pieces and snap them to a tile grid',
-                'Read TerrainData.size and automatically convert it to maze Width / Height ',
-                'Use EditorUtility.DisplayDialog, DestroyImmediate, and SceneView.RepaintAll() to support one-click generate / clear'
+                'Use DestroyImmediate, and SceneView.RepaintAll() to support one-click generate / clear'
             ]
         },
         tool3: {
             title: 'Maze Decoration Tool',
             description: 'Detect maze wall edges and automatically place decorations like trees and rocks based on adjustable parameters.',
             features: [
-                'Scan maze walls with GetComponentsInChildren&lt;>() and use existing markers to decide decoration spawn positions',
+                'Created a marker component and used GetComponentsInChildren() to determine decoration placement.',
                 'Use Random.value and Random.Range to control density, offset from the wall, and scale range for controlled randomness',
                 'Use Renderer.bounds.size to get wall thickness and combine it with wall normals to offset decorations outward correctly',
-                'Use GameObject.Find to create a centralized “Decorations Root” object that holds all placed decorations',
-                'Use Object.Instantiate and DestroyImmediate to generate / clear decorations in Editor mode'
+                'Used GameObject.Find() to find or create a Decorations root for managing editor-generated decorations.',
             ]
         },
         tool4: {
@@ -200,10 +197,43 @@ export default {
             features: [
                 'Use NavMesh.CalculateTriangulation and NavMesh.SamplePosition to convert NavMesh into walkable / unwalkable areas',
                 'Use Mathf.Lerp to project the 3D world into 2D texture space',
-                'Use BFS to compute distance fields from walkable to obstacles (and vice versa) to control edge thickness',
+                'Use BFS to compute distance fields from walkable to obstacles to control edge thickness',
                 'Support custom Walkable / Edge / Blocked colors and export the result as a PNG minimap texture',
                 'Use AssetDatabase and TextureImporter to fully automate exporting and importing the minimap texture'
             ]
         }
+    },
+    eecbet: {
+        title: 'EECBET Online Bet',
+        badges: 'Team of 4',
+        visitLink: 'Visit Website',
+
+        myWorkTitle: 'My Responsibilities',
+        myWorkItems: [
+            { title: 'Full-Stack Development', desc: 'End-to-end development from frontend to backend' },
+            { title: 'Homepage Design & Development', desc: 'Designed the homepage modules including carousel banners and featured games' },
+            { title: 'Slot Games Page', desc: 'Built the page with database-driven updates and carousel-style game UI' },
+            { title: 'Member Registration System', desc: 'Designed a multi-step registration flow and layout' },
+            { title: 'Database Integration', desc: 'Integrated with Neon cloud PostgreSQL service' },
+            { title: 'Consistent UI Styling', desc: 'Established design guidelines and unified UI components' }
+        ],
+
+        techTitle: 'Tech Stack',
+        techStacks: [{
+                title: 'Backend Architecture',
+                desc: 'Built with the classic MVC pattern to keep the codebase clean, maintainable, and scalable.',
+                tags: ['ASP.NET Core', 'MVC Pattern', 'EF Core ORM', 'PostgreSQL']
+            },
+            {
+                title: 'Frontend Integration',
+                desc: 'Combined Razor views with modern frontend techniques inside ASP.NET MVC.',
+                tags: ['Razor Views', 'JavaScript / jQuery', 'Bootstrap CSS', 'Responsive Design']
+            },
+            {
+                title: 'Team Collaboration',
+                desc: 'Used GitHub workflows to improve development efficiency and code quality.',
+                tags: ['Git Version Control', 'Code Review', 'Shared Conventions & Naming']
+            }
+        ]
     }
 };

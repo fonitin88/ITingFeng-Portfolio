@@ -5,7 +5,11 @@
       <!-- Game Header with Gradient Background -->
       <section class="hero">
         <h1 class="title"> Delivery Dash</h1>
-        <div class="hero-badge">🎮 Unity Game</div>
+        <div class="badge">
+          <div class="hero-badge">Unity</div>
+          <div class="hero-badge">WEB</div>
+          <div class="hero-badge">c#</div>
+        </div>
       </section>
 
       <!-- Game Iframe with Enhanced Frame -->
@@ -98,13 +102,12 @@
             <h3 class="tool-title">🗺️ {{ $t('code.tool4.title') }}</h3>
             <div class="tool-layout">
               <div class="tool-image-wrapper">
-                <img class="tool-image" :src="pics.tool_4" alt="NavMesh Minimap Generator" />
+                <img class="tool-image" :src="pics.tool_4" alt="Tools" />
               </div>
               <div class="tool-text">
                 <p class="tool-description">{{ $t('code.tool4.description') }}</p>
                 <ul class="feature-list">
                   <li v-for="(text, index) in $tm('code.tool4.features')" :key="index">{{ text }}</li>
-
                 </ul>
               </div>
             </div>
@@ -131,9 +134,11 @@ function resizeUnity() {
   //找到外層容器與縮放用的盒子
   const wrapper = document.querySelector('.game-wrapper');
   const box = document.querySelector('.unity-scale-box');
+  if (!wrapper || !box) return;
   //取得容器的實際大小
   const W = wrapper.clientWidth;
   const H = wrapper.clientHeight;
+  if (!W || !H) return;
   //等比縮放
   const scale = Math.min(W / 1280, H / 720);
   //把結果存成 CSS 變數
@@ -152,25 +157,32 @@ window.addEventListener('load', resizeUnity);
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-  gap: 30px;
+  gap: 16px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
-.hero-badge {
+.badge {
+  display: flex;
+  gap: 10px;
+}
 
+
+.hero-badge {
   padding: 0.4rem 1rem;
   background: rgba(0, 212, 255, 0.1);
   border: 1px solid rgba(0, 212, 255, 0.3);
   border-radius: 20px;
   font-size: 0.85rem;
   color: #00d4ff;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
   font-weight: 500;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
   color: #00d4ff;
 }
 
@@ -180,26 +192,32 @@ window.addEventListener('load', resizeUnity);
   margin: 20px;
 }
 
-/* Game Frame */
+/* ===== Game Frame (Responsive) ===== */
 .game-wrapper {
-  aspect-ratio: 16/9;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+
+  aspect-ratio: 16 / 9;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* 讓 iframe 直接填滿容器（不需要 1280*720 + scale） */
 .unity-scale-box {
-  /* 外殼去自動等比縮放 */
-  --unity-scale: 0.76;
-  transform: scale(var(--unity-scale));
-  transform-origin: top left;
   position: absolute;
+  inset: 0;
 }
 
 .unity-iframe {
-  width: 1280px;
-  height: 720px;
+  width: 100%;
+  height: 100%;
   border: none;
+  display: block;
 }
 
 /* Gameplay Section */
@@ -209,6 +227,8 @@ window.addEventListener('load', resizeUnity);
 
 .gameplayPic {
   width: 70px;
+  max-width: 100%;
+  height: auto;
 }
 
 .gameplay-title {
@@ -221,7 +241,7 @@ window.addEventListener('load', resizeUnity);
 
 .gameplay-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.2rem;
   margin-top: 20px;
 }
@@ -253,7 +273,7 @@ window.addEventListener('load', resizeUnity);
 }
 
 .section-title {
-  font-size: 1.8rem;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #fff;
@@ -271,7 +291,8 @@ window.addEventListener('load', resizeUnity);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
+  max-width: 1100px;
 }
 
 .tool-content {
@@ -279,7 +300,7 @@ window.addEventListener('load', resizeUnity);
 }
 
 .tool-title {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
   font-weight: 600;
   margin-bottom: 1.25rem;
   color: #fff;
@@ -292,15 +313,17 @@ window.addEventListener('load', resizeUnity);
 }
 
 .tool-image-wrapper {
-  width: 300px;
+  width: min(340px, 40vw);
   flex-shrink: 0;
 }
 
 .tool-image {
   width: 100%;
+  height: auto;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   object-fit: cover;
+  display: block;
 }
 
 .tool-text {
@@ -336,27 +359,44 @@ window.addEventListener('load', resizeUnity);
   font-weight: bold;
 }
 
+/* ===== Tablet ===== */
+@media (max-width: 900px) {
+  .tool-card {
+    padding: 1.5rem;
+  }
 
+  .tool-layout {
+    gap: 1.25rem;
+  }
+
+  .tool-image-wrapper {
+    width: min(320px, 44vw);
+  }
+}
+
+/* ===== Mobile ===== */
 @media (max-width: 600px) {
 
+
   .title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .gameplay-grid {
     grid-template-columns: 1fr;
   }
 
-  .section-title {
-    font-size: 1.8rem;
+  /* Tool 改直排 */
+  .tool-layout {
+    flex-direction: column;
+  }
+
+  .tool-image-wrapper {
+    width: 100%;
   }
 
   .tool-card {
-    padding: 1.5rem;
-  }
-
-  .tool-title {
-    font-size: 1.3rem;
+    padding: 1.25rem;
   }
 }
 </style>

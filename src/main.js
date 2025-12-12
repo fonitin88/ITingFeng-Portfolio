@@ -9,7 +9,7 @@ import en from './locales/en';
 import zhTW from './locales/zh-TW';
 const i18n = createI18n({
     legacy: false, // Vue 3 建議使用 Composition API
-    locale: 'en', // 預設語言
+    locale: 'zh-TW', // 預設語言
     fallbackLocale: 'en',
     messages: {
         en,

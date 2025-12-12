@@ -23,9 +23,22 @@
             {{ $t('header.experience') }}
           </router-link>
 
-          <router-link to="/games" class="nav-button" active-class="active">
-            {{ $t('header.games') }}
-          </router-link>
+          <div class="nav-dropdown" @click.stop>
+            <span class="nav-button" @click="isOpen = !isOpen">
+              {{ $t('header.games') }} ▾
+            </span>
+
+            <div class="dropdown-menu" v-show="isOpen">
+              <router-link to="/code/game1" class="dropdown-item" active-class="active" @click="isOpen = false">
+                WebGame
+              </router-link>
+
+              <router-link to="/code/webdemo1" class="dropdown-item" active-class="active" @click="isOpen = false">
+                Website
+              </router-link>
+            </div>
+          </div>
+
 
           <router-link to="/art" class="nav-button" active-class="active">
             {{ $t('header.art') }}
@@ -48,12 +61,12 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import Social from "../components/Social.vue";
-
+import { ref } from 'vue';
 const { locale } = useI18n();
 
 // email往外發事件
 const emit = defineEmits(["open-contact"]);
-
+const isOpen = ref(false);
 const setLang = (lang) => {
   locale.value = lang;
 };
@@ -116,8 +129,6 @@ const handleOpenContact = () => {
   transition: color 0.3s;
 }
 
-
-
 .nav-button:hover,
 .nav-button.active {
   color: white;
@@ -125,6 +136,47 @@ const handleOpenContact = () => {
 
 .social-links {
   display: inline-flex;
+}
+
+/* ===== Dropdown ===== */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  min-width: 140px;
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(5px);
+  transition: all 0.2s ease;
+  z-index: 2000;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.dropdown-item:hover {
+  background-color: #374151;
+  color: white;
+}
+
+/* hover 顯示 */
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* 語系 */
