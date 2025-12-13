@@ -1,5 +1,5 @@
 // router/index.js
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 // 匯入您的頁面元件
 import AboutPage from '../views/AboutPage.vue';
 import Experience from '../views/Experience.vue';
