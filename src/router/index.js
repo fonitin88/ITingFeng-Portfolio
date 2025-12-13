@@ -18,7 +18,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory('/ITingFeng-Portfolio/'),
+    history: createWebHashHistory(),
     routes,
     // 確保每次導航到新頁面時都滾動到頁面頂部
     scrollBehavior() {
