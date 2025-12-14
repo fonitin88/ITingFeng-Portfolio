@@ -25,16 +25,16 @@
 
           <div class="nav-dropdown" @click.stop>
             <span class="nav-button" @click="isOpen = !isOpen">
-              {{ $t('header.games') }} ▾
+              {{ $t('header.Code') }} ▾
             </span>
 
             <div class="dropdown-menu" v-show="isOpen">
               <router-link to="/code/game1" class="dropdown-item" active-class="active" @click="isOpen = false">
-                WebGame
+                {{ $t('header.game1') }}
               </router-link>
 
               <router-link to="/code/webdemo1" class="dropdown-item" active-class="active" @click="isOpen = false">
-                Website
+                {{ $t('header.web1') }}
               </router-link>
             </div>
           </div>

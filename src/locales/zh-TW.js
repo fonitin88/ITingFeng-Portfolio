@@ -4,8 +4,10 @@ export default {
         name: "馮宜婷",
         about: "關於我",
         experience: "經歷",
-        games: "程式",
+        Code: "程式",
         art: "美術",
+        game1: "網頁遊戲",
+        web1: "娛樂平台網站",
     },
     about: {
         intro: `我是一名 遊戲開發者，熱愛3D模型製作、場景設計美術，以及各種美術工具與程式開發流程。

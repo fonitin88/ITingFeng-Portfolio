@@ -4,8 +4,10 @@ export default {
         name: "I TING FENG",
         about: "About",
         experience: "Experience",
-        games: "Code",
+        Code: "Code",
         art: "ArtWork",
+        game1: "Web Game",
+        web1: "Website",
     },
     about: {
         intro: `I'm a Game Developer passionate about programming,
