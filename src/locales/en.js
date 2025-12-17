@@ -10,7 +10,7 @@ export default {
         web1: "Website",
     },
     about: {
-        intro: `I'm a Game Developer passionate about programming,
+        intro: `I'm a Game Developer passionate about C# programming,
     creating 3D assets, building immersive environments, and developing
     technical art solutions. I specialize in open-world environments,
     shaders, procedural generation, stylization, rendering optimization, PBR

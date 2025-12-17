@@ -16,7 +16,13 @@
             </svg>
         </a>
 
-        <!-- Gmail -->
+        <!-- Git -->
+        <a href="https://github.com/fonitin88" target="_blank" rel="noopener noreferrer" class="social-link"
+            title="GitHub">
+            <svg class="social-icon" fill="white">
+                <use href="#icon-github"></use>
+            </svg>
+        </a>
 
     </div>
 </template>
