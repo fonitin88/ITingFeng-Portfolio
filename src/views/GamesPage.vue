@@ -32,6 +32,34 @@
             <h3 class="card-title">{{ $t('code.gameplayCards2') }}</h3>
           </div>
         </div>
+        <!-- 收集物件說明 -->
+        <div class="gameplay-grid">
+          <div class="gameplay-card">
+            <img class="gameplayPic" src="../assets/Package_icon.png" alt="Space">
+            <h3 class="card-title">{{ $t('code.gameplayCards3') }}</h3>
+          </div>
+          <div class="gameplay-card">
+            <img class="gameplayPic" src="../assets/Robot.png" alt="Space">
+            <h3 class="card-title">{{ $t('code.gameplayCards4') }}</h3>
+          </div>
+          <div class="gameplay-card">
+            <img class="gameplayPic" src="../assets/Poison.png" alt="Space">
+            <h3 class="card-title">{{ $t('code.gameplayCards5') }}</h3>
+          </div>
+          <div class="gameplay-card">
+            <img class="gameplayPic" src="../assets/Gas.png" alt="WASD">
+            <h3 class="card-title">{{ $t('code.gameplayCards6') }}</h3>
+          </div>
+          <div class="gameplay-card">
+            <img class="gameplayPic" src="../assets/wrench.png" alt="Space">
+            <h3 class="card-title">{{ $t('code.gameplayCards7') }}</h3>
+          </div>
+          <div class="gameplay-card">
+            <img class="gameplayPic" src="../assets/battery.png" alt="Space">
+            <h3 class="card-title">{{ $t('code.gameplayCards8') }}</h3>
+          </div>
+
+        </div>
       </section>
 
       <!-- Tool Cards -->
@@ -226,9 +254,7 @@ window.addEventListener('load', resizeUnity);
 }
 
 .gameplayPic {
-  width: 70px;
-  max-width: 100%;
-  height: auto;
+  height: 70px;
 }
 
 .gameplay-title {

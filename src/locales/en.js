@@ -158,8 +158,14 @@ export default {
     code: {
         heroBadge: 'Unity Game',
 
-        gameplayCards1: 'Use WASD to drive the van and collect packages before time runs out.',
-        gameplayCards2: 'Avoid robots, or press Space to destroy them with high beams.',
+        gameplayCards1: 'Use WASD or virtual joystick to drive the van ',
+        gameplayCards2: 'Press Space or light button to destroy robots with headlight.',
+        gameplayCards3: 'Collect packages',
+        gameplayCards4: 'Watch out for robots',
+        gameplayCards5: 'Avoid the toxic gas areas',
+        gameplayCards6: 'Increase speed',
+        gameplayCards7: 'Restore health',
+        gameplayCards8: 'Increase attack power',
         toolsTitle: 'Custom Tools',
         toolsSubtitle: 'Unity Editor tools used to quickly build and iterate on gameplay levels',
         tool1: {

@@ -155,8 +155,14 @@ export default {
     code: {
         heroBadge: 'Unity 小遊戲',
 
-        gameplayCards1: '使用鍵盤的WASD來操作貨車，並在時間內收集包裹',
-        gameplayCards2: '躲避或使用空白鍵開大燈摧毀機器人。',
+        gameplayCards1: '使用鍵盤的WASD或畫面上的虛擬搖桿來操作貨車',
+        gameplayCards2: '使用空白鍵或畫面上的開燈按鈕來摧毀機器人',
+        gameplayCards3: '收集包裹',
+        gameplayCards4: '小心機器人',
+        gameplayCards5: '避開毒氣區域',
+        gameplayCards6: '加快速度',
+        gameplayCards7: '恢復生命值',
+        gameplayCards8: '攻擊力加強',
 
         toolsTitle: '客製化開發工具',
         toolsSubtitle: '用於快速建立遊戲關卡的 Unity Editor 工具',
