@@ -8,6 +8,7 @@ export default {
         art: "ArtWork",
         game1: "Web Game",
         web1: "Website",
+        company1:"FireDragonGame "
     },
     about: {
         intro: `I'm a Game Developer passionate about C# programming,
@@ -34,7 +35,7 @@ export default {
                 "Shader Graph ",
                 "Gameplay scripting",
                 "Custom Procedural tools",
-                "C#, JavaScript, VUE, HTML5, CSS",
+                "C#, Lua, Python, HTML5, CSS",
                 "ASP.NET, SQL",
             ],
             col2: [
@@ -241,6 +242,146 @@ export default {
                 title: 'Team Collaboration',
                 desc: 'Used GitHub workflows to improve development efficiency and code quality.',
                 tags: ['Git Version Control', 'Code Review', 'Shared Conventions & Naming']
+            }
+        ]
+    },
+    DFProject: {
+        title: 'Gambling Company Activity Pages',
+
+        tabLabels: ['Dragon Boat Event', 'Billion Event', 'Personal Info', 'Medals & Lottery'],
+
+        myWorkTitle: 'Workflow & Responsibilities',
+        archRootLabel: 'Backend Server',
+        archChildren: [
+            {
+                label: 'Manager – Backend Data Transmission & Reception',
+                sub: 'Protocol handling / Data logic',
+                children: [
+                    {
+                        label: 'Control – Art/UI Integration',
+                        sub: 'Animation integration / Task interaction / Leaderboard preview'
+                    },
+                    {
+                        label: 'RankingList – Sub-page Integration',
+                        sub: 'Full leaderboard / Today-yesterday toggle / Scheduled auto-refresh'
+                    }
+                ]
+            }
+        ],
+        archChildren2: [
+            {
+                label: 'Manager – Backend Data Transmission & Reception',
+                sub: 'Protocol handling / Data logic',
+                children: [
+                    {
+                        label: 'Control – Art/UI Integration',
+                        sub: 'Prize pool countdown / Leaderboard'
+                    }
+                ]
+            }
+        ],
+        archChildren3: [
+            {
+                label: 'Manager – Backend Data Transmission & Reception',
+                sub: 'Protocol handling / Data logic / Global event subscription',
+                children: [
+                    {
+                        label: 'Control – Art/UI Integration',
+                        sub: 'Basic data integration',
+                        children: [
+                            {
+                                label: 'Sub-page Control – Art/UI Integration',
+                                sub: 'Avatar change / Info popup'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        archChildren4: [
+            {
+                label: 'Manager – Backend Data Transmission & Reception',
+                sub: 'Protocol handling / Data logic / Global event subscription',
+                children: [
+                    {
+                        label: 'Control – Main Frame Integration',
+                        sub: 'Tab switching',
+                        children: [
+                            {
+                                label: 'Control – Secondary Screen Integration',
+                                sub: 'List data mapping / Unlock ordering / Progress display',
+                                children: [
+                                    {
+                                        label: 'Control – Tertiary Screen Integration',
+                                        sub: 'Drag-to-equip / Local staging / Confirm & send'
+                                    }
+                                ]
+                            },
+                            {
+                                label: 'Control – Button Entry',
+                                sub: 'Lottery / Progress hint'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+
+        techTitle: 'Tech Stack',
+        techStacks: [
+            {
+                title: 'Animation & Async Sync',
+                desc: 'Triggers follow-up logic only after the animation finishes, decoupling animation timing from network latency'
+            },
+            {
+                title: 'Leaderboard Self-Scheduling Refresh',
+                desc: 'Uses a self-rescheduling Timer to keep data updated, restoring rankings from cache when the backend throttles requests'
+            },
+            {
+                title: 'Node-Driven Resource Requirements',
+                desc: 'Item requirements are defined in a table rather than hardcoded logic, so values can be tuned without touching code'
+            }
+        ],
+        techStacks2: [
+            {
+                title: 'Refresh Aligned to Settlement',
+                desc: "Synchronizes refresh timing with the backend's settlement cycle and adds a buffer to avoid stale data"
+            },
+            {
+                title: 'Countdown Timer Implementation',
+                desc: 'Uses version-number comparison to prevent leftover processes from interfering with the next animation cycle'
+            },
+            {
+                title: 'Edge Case Data Handling',
+                desc: "Handles the initial amount baseline and the 'gap to ranking' hint to avoid abnormal displays"
+            }
+        ],
+        techStacks3: [
+            {
+                title: 'Avatar Change Flow',
+                desc: 'Commits the change to global data and refreshes the UI only after backend confirmation; reverts on failure to avoid race conditions and inconsistent state'
+            },
+            {
+                title: 'Object Pool Management',
+                desc: 'Pre-instantiates template objects and shows/hides them based on data length, avoiding repeated instantiation and destruction'
+            }
+        ],
+        techStacks4: [
+            {
+                title: 'Drag-to-Equip System Design',
+                desc: 'Drag interaction with automatic slot compaction after removing an item'
+            },
+            {
+                title: 'Local Staging',
+                desc: 'Updates only local state while dragging; sends to the backend once on confirm, reducing request frequency and latency'
+            },
+            {
+                title: 'Two-Tier Unlock Sorting',
+                desc: 'Sorts by unlock status first, then by weight when status is equal, so unlocked items are shown first'
+            },
+            {
+                title: 'Animation Timer Guard',
+                desc: "Clears the previous timer before starting a new animation; the guard's complexity is matched to the situation rather than over-engineered"
             }
         ]
     }

@@ -1,52 +1,51 @@
 <template>
-    <!-- EECBET Project Page 和同學做的博弈網站 -->
+    <!--工作Project Page  -->
     <div class="main-content">
         <div class="project-page">
             <!-- Project Header -->
             <section class="hero">
-                <h1 class="title">{{ $t('eecbet.title') }}</h1>
-                <div class="hero-badge">{{ $t('eecbet.badges') }}</div>
-                <div class="hero-badge">ASP.NET</div>
-                <div class="hero-badge">PostgreSQL</div>
-                <div class="hero-badge">MVC</div>
-                <div class="hero-badge">HTML5</div>
+                <h1 class="title">{{ $t('DFProject.title') }}</h1>
+                <div class="hero-badge">Unity</div>
+                <div class="hero-badge">Lua</div>
+                <div class="hero-badge">C#</div>
             </section>
 
-            <!-- Demo Preview with Button -->
+            <!-- Activity Tabs -->
+            <section class="tab-section">
+                <div class="tab-bar">
+                    <button v-for="(tab, i) in tabs" :key="i" class="tab-button" :class="{ active: activeTab === i }"
+                        @click="activeTab = i">
+                        {{ $tm('DFProject.tabLabels')[i] }}
+                    </button>
+                </div>
+            </section>
             <section class="demo-preview">
                 <div class="demo-wrapper">
-                    <img class="demo-pic" src="../assets/eec01.png" alt="webpic1">
-                    <img class="demo-pic" src="../assets/eec02.png" alt="webpic2">
+                    <img class="demo-pic" v-for="(img, i) in currentTab.images" :key="i" :src="img"
+                        :alt="'demo pic ' + i">
                 </div>
             </section>
 
-            <div class="demo-link">
-                <a href="https://eecproject.onrender.com/" target="_blank" class="visit-button">
-                    {{ $t('eecbet.visitLink') }}
-                </a>
-            </div>
-
-            <!-- My Work Section -->
-            <section class="work-section">
+            <section class="arch-section">
                 <div class="section-header">
-                    <h2 class="section-title"> {{ $t('eecbet.myWorkTitle') }}</h2>
+                    <h2 class="section-title">{{ $t('DFProject.myWorkTitle') }}</h2>
                 </div>
-                <div class="work-grid">
-                    <div class="work-card" v-for="(item, i) in $tm('eecbet.myWorkItems')" :key="i">
-                        <h3 class="card-title">{{ item.title }}</h3>
-                        <p class="card-desc">{{ item.desc }}</p>
-                    </div>
+                <div>
+                    <TreeNode :label="$t('DFProject.archRootLabel')"
+                        :children="currentTab.archChildrenKey ? $tm(currentTab.archChildrenKey) : []" />
                 </div>
+
             </section>
 
             <!-- Tech Stack Section -->
             <section class="tech-section">
                 <div class="section-header">
-                    <h2 class="section-title">{{ $t('eecbet.techTitle') }}</h2>
+                    <h2 class="section-title">{{ $t('DFProject.techTitle') }}</h2>
                 </div>
                 <div class="tech-card">
                     <!-- Backend Card -->
-                    <div class="tech-stack frontend-stack" v-for="(item, i) in $tm('eecbet.techStacks')" :key="i">
+                    <div class="tech-stack frontend-stack"
+                        v-for="(item, i) in (currentTab.techStacksKey ? $tm(currentTab.techStacksKey) : [])" :key="i">
                         <h3 class="tech-title">{{ item.title }}</h3>
                         <p class="tech-description">{{ item.desc }}</p>
                         <div class="frontend-tag" v-for="(tag, j) in item.tags" :key="j">
@@ -62,10 +61,77 @@
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
+import dragon from '../assets/dragon.png'
+import billion from '../assets/billion.png'
+const activeTab = ref(0)
+const tabs = [
+    {
+        archChildrenKey: 'DFProject.archChildren',
+        techStacksKey: 'DFProject.techStacks',
+        images: [dragon],
+    },
+    {
+        archChildrenKey: 'DFProject.archChildren2',
+        techStacksKey: 'DFProject.techStacks2',
+        images: [billion],
+    },
+    {
+        archChildrenKey: 'DFProject.archChildren3',
+        techStacksKey: 'DFProject.techStacks3',
+        images: [],
+    },
+    {
+        archChildrenKey: 'DFProject.archChildren4',
+        techStacksKey: 'DFProject.techStacks4',
+        images: [],
+    },
 
+]
+
+const currentTab = computed(() => tabs[activeTab.value])
+import TreeNode from '../components/TreeNode.vue'
 </script>
 
 <style scoped>
+/* Tab Section */
+.tab-section {
+    margin-bottom: 2rem;
+}
+
+.tab-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    border-bottom: 3px solid #17a2b8;
+}
+
+.tab-button {
+    position: relative;
+    padding: 0.7rem 2rem;
+    margin: 0;
+    border: none;
+    background: #6e858b;
+    color: rgba(10, 17, 18, 0.75);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.25s ease;
+    border-radius: 10px 10px 0 0;
+}
+
+.tab-button:hover {
+    filter: brightness(1.08);
+}
+
+.tab-button.active {
+    background: #0dcbe0;
+    color: #002830;
+    font-weight: 700;
+    z-index: 1;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -254,6 +320,8 @@
     color: #7b61ff;
     border: 1px solid rgba(123, 97, 255, 0.3);
 }
+
+
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {

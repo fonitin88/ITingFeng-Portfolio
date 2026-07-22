@@ -36,6 +36,10 @@
               <router-link to="/code/webdemo1" class="dropdown-item" active-class="active" @click="isOpen = false">
                 {{ $t('header.web1') }}
               </router-link>
+              <router-link to="/code/DFProject" class="dropdown-item" active-class="active" @click="isOpen = false">
+               {{ $t('header.company1') }}
+              </router-link>
+
             </div>
           </div>
 

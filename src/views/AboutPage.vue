@@ -17,7 +17,7 @@
         </div>
         <div class="stat-item">
           <div class="stat-emoji">🎮</div>
-          <div class="stat-number">8</div>
+          <div class="stat-number">9</div>
           <div class="stat-label">{{ $t('about.stats.games') }}</div>
         </div>
         <div class="stat-item">

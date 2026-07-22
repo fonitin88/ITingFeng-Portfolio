@@ -1,4 +1,5 @@
 <template>
+  <!-- 小遊戲的 -->
   <!-- Games Page -->
   <div class="main-content">
     <div class="delivery-page">
