@@ -68,6 +68,10 @@
           <span class="tool-name">Unreal</span>
         </span>
         <span class="tool-item">
+          <img class="tool-pic" src="../assets/ICON/Omniverse.png" alt="Omniverse">
+          <span class="tool-name">Omniverse</span>
+        </span>
+        <span class="tool-item">
           <img class="tool-pic" src="../assets/ICON/3dsMax.png" alt="3dsmax">
           <span class="tool-name">3ds Max</span>
         </span>

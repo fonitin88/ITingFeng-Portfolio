@@ -61,53 +61,41 @@ export default {
     },
   },
   experience: {
-    xlegend: {
-      name: "傳奇網路",
-      period: "2012.4 – 2018.3",
-      duration: "5 年 11 個月",
+    wiwynn: {
+      name: "緯穎科技",
+      period: "2026.8 – 至今",
+      title: "數位孿生工程師",
       location: "台灣",
       projects: {
-        dragon: {
-          name: "狩龍戰紀",
-          role: "3D場景物件",
-        },
-        gd: {
-          name: "晴空物語",
-          role: "關卡美術 / 3D場景物件 /材質製作 / 特效",
-        },
-        laplace: {
-          name: "拉普拉斯的神子",
-          role: "關卡美術 / 3D場景物件 /材質製作 / 特效",
-        },
-        aurakingdom: {
-          name: "幻想神域手機板",
-          role: "關卡美術 / 3D場景物件 /材質製作 / 特效",
+        digitaltwin: {
+          name: "工廠數位孿生",
+          role: "自動產線建置工具 / 共用 USD 材質庫 / 模型優化 / 外包資產管理",
         },
       },
     },
 
-    toppath: {
-      name: "祥捷國際",
-      period: "2018.5 – 2022.3",
-      duration: "3 年 10 個月",
+    dragonfire: {
+      name: "火龍數位科技",
+      period: "2026.1 – 2026.8",
+      title: "Unity 遊戲開發工程師",
       location: "台灣",
       projects: {
-        ebet: {
-          name: "eBET",
-          role: "UI/Banner/電子報/影片製作 /2D & 3D 遊戲物件 / 特效",
+        liveops: {
+          name: "運營活動 ×4",
+          role: "Unity 活動 UI 製作 / UI ↔ 後端 API 串接、即時資料",
         },
       },
     },
 
-    finifugu: {
-      name: "Finifugu",
-      period: "2020.2 – 2020.8",
-      duration: "6 個月專案",
-      location: "香港（遠端合作）",
+    ringtail: {
+      name: "Ringtail / Brink",
+      period: "2024.5 – 2025.4",
+      title: "資深 3D 場景美術",
+      location: "瑞典",
       projects: {
-        themepark: {
-          name: "ThemePark Island",
-          role: "3D場景模型 /3D角色模型 / 動畫設定",
+        scape: {
+          name: "Scape（未上市）",
+          role: "關卡美術 / 3D 場景物件",
         },
       },
     },
@@ -115,25 +103,63 @@ export default {
     neobards: {
       name: "泥巴娛樂",
       period: "2022.4 – 2023.10",
-      duration: "1 年 6 個月",
+      title: "資深 3D 場景美術",
       location: "台灣",
       projects: {
         dwm: {
           name: "真・三國無雙 M",
-          role: "關卡美術 / 3D場景模型 / 場景優化",
+          role: "關卡美術 / 3D 場景物件",
         },
       },
     },
 
-    ringtail: {
-      name: "Ringtail Interactive",
-      period: "2024.5 – 2025.4",
-      duration: "11 個月",
-      location: "瑞典",
+    finifugu: {
+      name: "Finfugu",
+      period: "2020.2 – 2020.8",
+      title: "接案 3D 美術",
+      location: "香港",
       projects: {
-        scape: {
-          name: "Scape",
-          role: "場景美術 / 3D場景模型/ 場景優化",
+        themepark: {
+          name: "ThemePark Island",
+          role: "3D 物件 / 動畫",
+        },
+      },
+    },
+
+    toppath: {
+      name: "祥捷國際",
+      period: "2018.5 – 2022.3",
+      title: "資深綜合美術",
+      location: "台灣",
+      projects: {
+        ebet: {
+          name: "eBET",
+          role: "UI / Banner / 影片剪輯 / 遊戲內特效 / 新遊戲視覺",
+        },
+      },
+    },
+
+    xlegend: {
+      name: "傳奇網路",
+      period: "2012.4 – 2017.8",
+      title: "3D 場景美術",
+      location: "台灣",
+      projects: {
+        dragon: {
+          name: "狩龍戰紀",
+          role: "3D 場景物件",
+        },
+        gd: {
+          name: "晴空物語",
+          role: "關卡美術 / 3D 場景物件 / 特效",
+        },
+        laplace: {
+          name: "拉普拉斯的神子",
+          role: "關卡美術 / 3D 場景物件 / 特效",
+        },
+        aurakingdom: {
+          name: "幻想神域手機版",
+          role: "關卡美術 / 3D 場景物件 / 特效",
         },
       },
     },

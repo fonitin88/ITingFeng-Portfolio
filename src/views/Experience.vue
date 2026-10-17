@@ -8,8 +8,8 @@
             <div class="timeline-content">
               <div class="company-info">
                 <div class="company-header">
-                  <span>
-                    <img class="company-icon" :src="company.icon" :alt="$t('experience.' + company.id + '.name')" />
+                  <span v-if="company.icon">
+                    <img class="company-icon" :class="company.iconClass" :src="company.icon" :alt="$t('experience.' + company.id + '.name')" />
                   </span>
                   <span class="company-name">
                     {{ $t('experience.' + company.id + '.name') }}
@@ -17,9 +17,8 @@
                 </div>
                 <div class="company-details">
                   {{ $t('experience.' + company.id + '.period') }}
-                  <div class="company-meta">
-                    <span class="meta-icon">💎</span>
-                    {{ $t('experience.' + company.id + '.duration') }}
+                  <div class="company-title">
+                    {{ $t('experience.' + company.id + '.title') }}
                   </div>
                   <div class="company-meta">
                     <span class="meta-icon">📍</span>
@@ -32,7 +31,7 @@
                 <div v-for="(project, pIndex) in company.projects" :key="pIndex" class="project-item">
 
                   <div class="project-info">
-                    <img :src="project.logo" :alt="$t('experience.' + company.id + '.projects.' + project.id + '.name')"
+                    <img v-if="project.logo" :src="project.logo" :class="project.logoClass" :alt="$t('experience.' + company.id + '.projects.' + project.id + '.name')"
                       class="project-logo" />
                     <div class="project-name">
                       {{ $t('experience.' + company.id + '.projects.' + project.id + '.name') }}
@@ -57,33 +56,31 @@
 <script setup>
 import { ref } from "vue";
 
-const getIconPath = (filename) => {
-  return new URL(`../assets/ICON/${filename}.png`, import.meta.url).href;
+const getIconPath = (filename, ext = 'png') => {
+  return new URL(`../assets/ICON/${filename}.${ext}`, import.meta.url).href;
 };
 
 const companies = ref([
   {
-    id: "xlegend",
-    icon: getIconPath('X-legend'),
+    id: "wiwynn",
+    icon: getIconPath('Wiwynn LOGO with NAME_White_Green', 'svg'),
+    iconClass: "company-icon--wide",
     projects: [
-      { id: "dragon", logo: getIconPath('Dragon') },
-      { id: "gd", logo: getIconPath('GD_art_1') },
-      { id: "laplace", logo: getIconPath('laplace') },
-      { id: "aurakingdom", logo: getIconPath('aurakingdom') },
+      { id: "digitaltwin", logo: getIconPath('6512e4b6d75aa'), logoClass: "project-logo--wide project-logo--light" },
     ],
   },
   {
-    id: "toppath",
-    icon: getIconPath('Toppath'),
+    id: "dragonfire",
+    icon: getIconPath('DragonFire-icon'),
     projects: [
-      { id: "ebet", logo: getIconPath('eBET') },
+      { id: "liveops" },
     ],
   },
   {
-    id: "finifugu",
-    icon: getIconPath('Finifugu'),
+    id: "ringtail",
+    icon: getIconPath('Ringtail'),
     projects: [
-      { id: "themepark", logo: getIconPath('ThemePark') },
+      { id: "scape", logo: getIconPath('Scape') },
     ],
   },
   {
@@ -94,10 +91,27 @@ const companies = ref([
     ],
   },
   {
-    id: "ringtail",
-    icon: getIconPath('Ringtail'),
+    id: "finifugu",
+    icon: getIconPath('Finifugu'),
     projects: [
-      { id: "scape", logo: getIconPath('Scape') },
+      { id: "themepark", logo: getIconPath('ThemePark') },
+    ],
+  },
+  {
+    id: "toppath",
+    icon: getIconPath('Toppath'),
+    projects: [
+      { id: "ebet", logo: getIconPath('eBET') },
+    ],
+  },
+  {
+    id: "xlegend",
+    icon: getIconPath('X-legend'),
+    projects: [
+      { id: "dragon", logo: getIconPath('Dragon') },
+      { id: "gd", logo: getIconPath('GD_art_1') },
+      { id: "laplace", logo: getIconPath('laplace') },
+      { id: "aurakingdom", logo: getIconPath('aurakingdom') },
     ],
   },
 ]);
@@ -159,6 +173,14 @@ const companies = ref([
   animation-delay: 0.5s;
 }
 
+.timeline-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.timeline-item:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -211,6 +233,10 @@ const companies = ref([
   width: 30px;
 }
 
+.company-icon--wide {
+  width: 70px;
+}
+
 .company-name {
   font-size: 18px;
   font-weight: 700;
@@ -228,6 +254,12 @@ const companies = ref([
   align-items: center;
   gap: 6px;
   margin-top: 6px;
+}
+
+.company-title {
+  margin-top: 4px;
+  font-weight: 600;
+  color: #f39c12;
 }
 
 .meta-icon {
@@ -261,6 +293,15 @@ const companies = ref([
   object-fit: contain;
   flex-shrink: 0;
   border-radius: 8px;
+}
+
+.project-logo--wide {
+  width: 120px;
+}
+
+.project-logo--light {
+  padding: 4px 8px;
+  background: #fff;
 }
 
 .project-info {

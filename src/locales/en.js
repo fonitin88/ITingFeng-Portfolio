@@ -62,53 +62,41 @@ export default {
         },
     },
     experience: {
-        xlegend: {
-            name: "X-Legend",
-            period: "2012.4 – 2018.3",
-            duration: "5 y's 11 m",
+        wiwynn: {
+            name: "Wiwynn",
+            period: "2026.8 – Present",
+            title: "Digital Twin Engineer",
             location: "Taiwan",
             projects: {
-                dragon: {
-                    name: "Dragon Slayer",
-                    role: "Hand-painting 3D props",
-                },
-                gd: {
-                    name: "Glory Destiny",
-                    role: "Level Art / Hand-painting 3D Props /Materials / VFX",
-                },
-                laplace: {
-                    name: "LaPlace",
-                    role: "Level Art / Hand-painting 3D Props / Materials / VFX / Props Animation",
-                },
-                aurakingdom: {
-                    name: "Aura Kingdom",
-                    role: "Level Art / Hand-painting 3D Props / Materials / VFX",
+                digitaltwin: {
+                    name: "Factory Digital Twin",
+                    role: "Auto line-builder tool / Shared USD material library / Mesh optimization / Outsourced asset management",
                 },
             },
         },
 
-        toppath: {
-            name: "Toppath",
-            period: "2018.5 – 2022.3",
-            duration: "3 y's 10 m",
+        dragonfire: {
+            name: "Dragonfire",
+            period: "2026.1 – 2026.8",
+            title: "Unity Game Developer",
             location: "Taiwan",
             projects: {
-                ebet: {
-                    name: "eBET",
-                    role: "UI / Banner / Newsletter / Video Production / 2D & 3D Game assets / VFX",
+                liveops: {
+                    name: "Live-ops Events ×4",
+                    role: "Unity event UI implementation / UI ↔ backend API, real-time data",
                 },
             },
         },
 
-        finifugu: {
-            name: "Finifugu",
-            period: "2020.2 – 2020.8",
-            duration: "6 m Project",
-            location: "Hong Kong",
+        ringtail: {
+            name: "Ringtail / Brink",
+            period: "2024.5 – 2025.4",
+            title: "Senior 3D Env. Artist",
+            location: "Sweden",
             projects: {
-                themepark: {
-                    name: "ThemePark Island",
-                    role: "Hand-painting 3D Props /3D Characters / Animation Setup",
+                scape: {
+                    name: "Scape (Unreleased)",
+                    role: "Level Art / 3D Assets",
                 },
             },
         },
@@ -116,25 +104,63 @@ export default {
         neobards: {
             name: "Neobards",
             period: "2022.4 – 2023.10",
-            duration: "1 y's 6 m",
+            title: "Senior 3D Env. Artist",
             location: "Taiwan",
             projects: {
                 dwm: {
                     name: "Dynasty Warriors M",
-                    role: "Level Art / 3D assets / Scene Optimization",
+                    role: "Level Art / 3D Assets",
                 },
             },
         },
 
-        ringtail: {
-            name: "Ringtail Interactive",
-            period: "2024.5 – 2025.4",
-            duration: "11 m",
-            location: "Sweden",
+        finifugu: {
+            name: "Finfugu",
+            period: "2020.2 – 2020.8",
+            title: "Freelance 3D Artist",
+            location: "Hong Kong",
             projects: {
-                scape: {
-                    name: "Scape",
-                    role: "Level Art / 3D assets / Scene Optimization",
+                themepark: {
+                    name: "ThemePark Island",
+                    role: "3D Assets / Animation",
+                },
+            },
+        },
+
+        toppath: {
+            name: "Toppath",
+            period: "2018.5 – 2022.3",
+            title: "Senior General Artist",
+            location: "Taiwan",
+            projects: {
+                ebet: {
+                    name: "eBET",
+                    role: "UI / Banners / Video Editing / In-game VFX / New Game Visuals",
+                },
+            },
+        },
+
+        xlegend: {
+            name: "X-Legend",
+            period: "2012.4 – 2017.8",
+            title: "3D Environment Artist",
+            location: "Taiwan",
+            projects: {
+                dragon: {
+                    name: "Dragon Slayer",
+                    role: "3D Props",
+                },
+                gd: {
+                    name: "Glory Destiny",
+                    role: "Level Art / 3D Assets / VFX",
+                },
+                laplace: {
+                    name: "LaPlace",
+                    role: "Level Art / 3D Assets / VFX",
+                },
+                aurakingdom: {
+                    name: "Aura Kingdom",
+                    role: "Level Art / 3D Assets / VFX",
                 },
             },
         },
