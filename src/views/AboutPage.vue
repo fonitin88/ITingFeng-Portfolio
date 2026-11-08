@@ -6,6 +6,7 @@
         <CircleMaskSvg :src="meImg" :size="260" :zoom="3.4" :offsetX="0" :offsetY="0.2" />
       </div>
 
+      <h1 class="role-title">{{ $t('about.role') }}</h1>
       <p class="intro-text" v-html="$t('about.intro')"></p>
 
       <!-- 統計數據 -->
@@ -34,22 +35,22 @@
       <div class="skills-columns">
         <div class="skills-column">
           <ul>
-            <li><i class="bi bi-arrows-fullscreen"></i>{{ $t('about.skills.col1.0') }}</li>
-            <li><i class="bi bi-code-slash"></i>{{ $t('about.skills.col1.4') }}</li>
-            <li><i class="bi bi-database-fill"></i>{{ $t('about.skills.col1.5') }}</li>
-            <li><i class="bi bi-droplet-fill"></i>{{ $t('about.skills.col1.1') }}</li>
-            <li><i class="bi bi-joystick"></i>{{ $t('about.skills.col1.2') }}</li>
-            <li><i class="bi bi-magic"></i> {{ $t('about.skills.col1.3') }}</li>
-          </ul>
-        </div>
-        <div class="skills-column">
-          <ul>
             <li><i class="bi bi-box"></i>{{ $t('about.skills.col2.0') }}</li>
             <li><i class="bi bi-map-fill"></i>{{ $t('about.skills.col2.1') }}</li>
             <li><i class="bi bi-images"></i> {{ $t('about.skills.col2.2') }}</li>
             <li><i class="bi bi-lightbulb-fill"></i>{{ $t('about.skills.col2.3') }}</li>
             <li><i class="bi bi-diagram-3-fill"></i> {{ $t('about.skills.col2.4') }}</li>
             <li><i class="bi bi-asterisk"></i> {{ $t('about.skills.col2.5') }}</li>
+          </ul>
+        </div>
+        <div class="skills-column">
+          <ul>
+            <li><i class="bi bi-arrows-fullscreen"></i>{{ $t('about.skills.col1.0') }}</li>
+            <li><i class="bi bi-code-slash"></i>{{ $t('about.skills.col1.4') }}</li>
+            <li><i class="bi bi-database-fill"></i>{{ $t('about.skills.col1.5') }}</li>
+            <li><i class="bi bi-droplet-fill"></i>{{ $t('about.skills.col1.1') }}</li>
+            <li><i class="bi bi-joystick"></i>{{ $t('about.skills.col1.2') }}</li>
+            <li><i class="bi bi-magic"></i> {{ $t('about.skills.col1.3') }}</li>
           </ul>
         </div>
       </div>
@@ -183,6 +184,13 @@ export default {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+}
+
+.role-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0 0 1rem;
 }
 
 .intro-text {

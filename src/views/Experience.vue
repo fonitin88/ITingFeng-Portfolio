@@ -60,6 +60,7 @@ const getIconPath = (filename, ext = 'png') => {
   return new URL(`../assets/ICON/${filename}.${ext}`, import.meta.url).href;
 };
 
+// 由舊到新排列：反轉陣列，最早的經歷顯示在最上面
 const companies = ref([
   {
     id: "wiwynn",
@@ -114,7 +115,7 @@ const companies = ref([
       { id: "aurakingdom", logo: getIconPath('aurakingdom') },
     ],
   },
-]);
+].reverse());
 </script>
 
 <style scoped>

@@ -23,6 +23,10 @@
             {{ $t('header.experience') }}
           </router-link>
 
+          <router-link to="/art" class="nav-button" active-class="active">
+            {{ $t('header.art') }}
+          </router-link>
+
           <div class="nav-dropdown" @click.stop>
             <span class="nav-button" @click="isOpen = !isOpen">
               {{ $t('header.Code') }} ▾
@@ -43,10 +47,6 @@
             </div>
           </div>
 
-
-          <router-link to="/art" class="nav-button" active-class="active">
-            {{ $t('header.art') }}
-          </router-link>
           <Social class="social-links" @open-contact="handleOpenContact" />
           <!-- 語言切換按鈕 -->
           <div class="lang-down">

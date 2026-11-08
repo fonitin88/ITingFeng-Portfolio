@@ -11,11 +11,12 @@ export default {
         company1:"FireDragonGame "
     },
     about: {
-        intro: `I'm a Game Developer passionate about C# programming,
-    creating 3D assets, building immersive environments, and developing
-    technical art solutions. I specialize in open-world environments,
-    shaders, procedural generation, stylization, rendering optimization, PBR
-    workflows, and more.`,
+        role: "Senior 3D Environment Artist | Technical Artist",
+        intro: `I'm a Senior 3D Environment Artist and Technical Artist with 10+ years of experience
+    in 3D environment art and nearly a year as an engineer.
+    I specialize in open-world environments, level art, lighting, stylized and realistic creation,
+    and PBR workflows, and I use shaders, procedural tools and C# to streamline art pipelines
+    and optimize rendering.`,
 
         sectionTitles: {
             skills: "Skills",
