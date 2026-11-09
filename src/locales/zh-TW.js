@@ -70,7 +70,7 @@ export default {
       projects: {
         digitaltwin: {
           name: "工廠數位孿生",
-          role: "自動產線建置工具 / 共用 USD 材質庫 / 模型優化 / 外包資產管理",
+          role: "將 3D 資料導入 Omniverse / 制定導入流程 / 製作工業設備 3D 模型 / 開發所需 Extension / 共用 USD 材質庫 / 模型優化",
         },
       },
     },

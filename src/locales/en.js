@@ -71,7 +71,7 @@ export default {
             projects: {
                 digitaltwin: {
                     name: "Factory Digital Twin",
-                    role: "Auto line-builder tool / Shared USD material library / Mesh optimization / Outsourced asset management",
+                    role: "3D Data Import into Omniverse / Import Pipeline Design / Industrial Equipment 3D Modeling / Custom Extension Development / Shared USD Material Library / Mesh Optimization",
                 },
             },
         },
